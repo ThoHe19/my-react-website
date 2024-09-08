@@ -1,0 +1,253 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body, html {
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.6;
+  color: #fff;
+  background-color: #1a1a2e;
+  scroll-behavior: smooth;
+}
+
+.App {
+  width: 100%;
+  min-height: 100vh;
+}
+
+.about-section {
+  position: relative;
+  z-index: 1;
+}z
+
+
+
+@keyframes float {
+  0% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(180deg); }
+  100% { transform: translateY(0) rotate(360deg); }
+}
+
+.hero, .content-section {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 4rem 2rem;
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+.content-section {
+  opacity: 0;
+  transform: translateY(50px);
+}
+
+.content-section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+h1 {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+
+h2 {
+  font-size: 3rem;
+  margin-bottom: 2rem;
+}
+
+p {
+  font-size: 1.2rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.project-card {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  padding: 1.5rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  max-width: 500px;
+  width: 100%;
+}
+
+input, textarea {
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+
+button {
+  padding: 0.5rem 1rem;
+  background-color: #23d5ab;
+  color: #1a1a2e;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #1fa586;
+}
+
+.custom-cursor {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  transition: transform 0.2s ease;
+}
+
+body:hover .custom-cursor {
+  transform: scale(1.5);
+}
+
+.glitch {
+  position: relative;
+  color: #fff;
+  font-size: 4rem;
+  letter-spacing: 0.5rem;
+  animation: glitch 1s linear infinite;
+}
+
+.glitch::before,
+.glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.glitch::before {
+  left: 2px;
+  text-shadow: -2px 0 #ff00c1;
+  clip: rect(44px, 450px, 56px, 0);
+  animation: glitch-anim 5s infinite linear alternate-reverse;
+}
+
+.glitch::after {
+  left: -2px;
+  text-shadow: -2px 0 #00fff9, 2px 2px #ff00c1;
+  animation: glitch-anim2 1s infinite linear alternate-reverse;
+}
+
+@keyframes glitch-anim {
+  0% { clip: rect(31px, 9999px, 94px, 0); }
+  4.166666667% { clip: rect(91px, 9999px, 43px, 0); }
+  8.333333333% { clip: rect(65px, 9999px, 59px, 0); }
+  12.5% { clip: rect(30px, 9999px, 81px, 0); }
+  16.66666667% { clip: rect(1px, 9999px, 53px, 0); }
+  20.83333333% { clip: rect(5px, 9999px, 53px, 0); }
+  25% { clip: rect(107px, 9999px, 97px, 0); }
+  29.16666667% { clip: rect(95px, 9999px, 53px, 0); }
+  33.33333333% { clip: rect(121px, 9999px, 58px, 0); }
+  37.5% { clip: rect(74px, 9999px, 96px, 0); }
+  41.66666667% { clip: rect(22px, 9999px, 17px, 0); }
+  45.83333333% { clip: rect(38px, 9999px, 49px, 0); }
+  50% { clip: rect(110px, 9999px, 36px, 0); }
+  54.16666667% { clip: rect(19px, 9999px, 131px, 0); }
+  58.33333333% { clip: rect(94px, 9999px, 68px, 0); }
+  62.5% { clip: rect(43px, 9999px, 65px, 0); }
+  66.66666667% { clip: rect(77px, 9999px, 137px, 0); }
+  70.83333333% { clip: rect(89px, 9999px, 99px, 0); }
+  75% { clip: rect(60px, 9999px, 44px, 0); }
+  79.16666667% { clip: rect(71px, 9999px, 63px, 0); }
+  83.33333333% { clip: rect(68px, 9999px, 82px, 0); }
+  87.5% { clip: rect(90px, 9999px, 125px, 0); }
+  91.66666667% { clip: rect(115px, 9999px, 115px, 0); }
+  95.83333333% { clip: rect(28px, 9999px, 64px, 0); }
+  100% { clip: rect(86px, 9999px, 83px, 0); }
+}
+
+@keyframes glitch-anim2 {
+  0% { clip: rect(129px, 9999px, 36px, 0); }
+  4.166666667% { clip: rect(36px, 9999px, 4px, 0); }
+  8.333333333% { clip: rect(85px, 9999px, 66px, 0); }
+  12.5% { clip: rect(105px, 9999px, 59px, 0); }
+  16.66666667% { clip: rect(78px, 9999px, 115px, 0); }
+  20.83333333% { clip: rect(23px, 9999px, 56px, 0); }
+  25% { clip: rect(74px, 9999px, 53px, 0); }
+  29.16666667% { clip: rect(0px, 9999px, 94px, 0); }
+  33.33333333% { clip: rect(96px, 9999px, 99px, 0); }
+  37.5% { clip: rect(50px, 9999px, 102px, 0); }
+  41.66666667% { clip: rect(12px, 9999px, 18px, 0); }
+  45.83333333% { clip: rect(70px, 9999px, 65px, 0); }
+  50% { clip: rect(69px, 9999px, 81px, 0); }
+  54.16666667% { clip: rect(11px, 9999px, 77px, 0); }
+  58.33333333% { clip: rect(89px, 9999px, 98px, 0); }
+  62.5% { clip: rect(56px, 9999px, 51px, 0); }
+  66.66666667% { clip: rect(67px, 9999px, 86px, 0); }
+  70.83333333% { clip: rect(10px, 9999px, 57px, 0); }
+  75% { clip: rect(35px, 9999px, 93px, 0); }
+  79.16666667% { clip: rect(62px, 9999px, 29px, 0); }
+  83.33333333% { clip: rect(40px, 9999px, 52px, 0); }
+  87.5% { clip: rect(58px, 9999px, 96px, 0); }
+  91.66666667% { clip: rect(44px, 9999px, 91px, 0); }
+  95.83333333% { clip: rect(113px, 9999px, 43px, 0); }
+  100% { clip: rect(66px, 9999px, 97px, 0); }
+}
+
+.typewriter {
+  overflow: hidden;
+  border-right: .15em solid #fff;
+  white-space: nowrap;
+  margin: 0 auto;
+  letter-spacing: .15em;
+  animation: 
+    typing 3.5s steps(40, end),
+    blink-caret .75s step-end infinite;
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: #fff; }
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 3rem;
+  }
+
+  h2 {
+    font-size: 2.5rem;
+  }
+}
